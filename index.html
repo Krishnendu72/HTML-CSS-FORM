@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form-model</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id="title">Tech Survey Model</h1>
+    <p id="description">Thankyou for taking this survey</p>
+    <form id="survey-form">
+        <div>
+            <label for="name" id="name-label">Enter your name </label>
+            <input id="name" type="text" placeholder="enter the name" required />
+        </div>
+        <div>
+            <label for="email" id="email-label">Enter your email </label>
+            <input id="email" type="email" placeholder="enter the email" required />
+        </div>
+        <div>
+            <label> Select your gender : </label>
+            <select id="dropdown" title="Select your gender">
+                <option> option </option>
+                <option> female </option>
+                <option> male </option>
+            </select>
+        </div>
+        <div>
+            <label>Enter the category :</label>
+            <label class="normal"><input value="web" name="sub" type="radio"> Web Development</label>
+            <label class="normal"><input value="ml" name="sub" type="radio"> Machine learning </label>
+            <label class="normal"><input value="cyber" name="sub" type="radio"> Cybersecurity</label>
+        </div>
+        <div>
+            <label>Enter the experience :</label>
+            <label class="normal"><input value="Rookie" type="checkbox"> Rookie</label>
+            <label class="normal"><input value="Intermediate" type="checkbox"> Intermediate</label>
+            <label class="normal"><input value="experienced" type="checkbox"> Experienced</label>
+        </div>
+        <div>
+            <p> <label for="textarea"> Leave comments </label></p> <textarea id="textarea"></textarea>
+        </div>
+        <div>
+            <button type="submit" id="submit"> submit </button>
+        </div>
+    </form>
+    <script>
+        let selectedCount = 0;
+
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('click', event => {
+                if (event.target.type === 'checkbox') {
+                    selectedCount = event.target.checked
+                        ? selectedCount + 1
+                        : selectedCount - 1;
+
+                    if (selectedCount === 1) {
+                        document.querySelectorAll('input[type="checkbox"]:not(:checked)').forEach(input => input.disabled = true);
+                    } else {
+                        document.querySelectorAll('input[type="checkbox"]').forEach(input => input.disabled = false);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

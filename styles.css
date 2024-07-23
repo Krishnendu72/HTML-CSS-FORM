@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+#title {
+    text-align: center;
+    font-size: 4em;
+    color: #333;
+    text-shadow: 5px 5px #d3d3d3;
+}
+
+#description {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+#survey-form {
+    background: #fff;
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #dcdcdc, -1px -1px 5px #75746e;
+}
+
+#survey-form:hover {
+    box-shadow: 12px 12px 12px #dcdcdc, -5px -5px 10px #75746e;
+}
+
+#survey-form div {
+    margin-bottom: 15px;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+label[id="email-label"]::after,
+label[id="name-label"]::after {
+    content: '* :';
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Advanced styling */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#dropdown {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #title {
+        font-size: 2em;
+    }
+
+    #description {
+        font-size: 1em;
+    }
+}
